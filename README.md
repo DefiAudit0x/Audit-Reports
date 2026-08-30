@@ -58,8 +58,8 @@ The review process follows a structured pipeline:
 ├── 002-tx-origin-access-control.md
 ├── 003-stale-oracle.md
 ├── templates/
-│   ├── report-template.md       # (planned) standard report template
-│   └── severity-matrix.md       # (planned) severity rubric
+│   ├── report-template.md       # standard report template
+│   └── severity-matrix.md       # severity rubric
 ├── LICENSE
 └── README.md
 ```
