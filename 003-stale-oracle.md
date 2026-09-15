@@ -57,13 +57,9 @@ The impact depends on the protocol's accounting model and market volatility. A s
 
 
 1. Deploy a mock feed with a valid positive answer and an old `updatedAt`.
-2. 
 2. Call `collateralValue` on the vulnerable consumer; it accepts the stale price.
-3. 
 3. Call the safe consumer with the same feed and a bounded `maxAge`.
-4. 
 4. Confirm that the safe consumer reverts with `stale price`.
-5. 
 5. Repeat with `answeredInRound < roundId` and confirm the incomplete round guard.
 6. 
 
@@ -81,7 +77,6 @@ Validate that the answer is positive, `updatedAt` is nonzero, the age is within 
 
 
 | Check | Expected result |
-
 |---|---|
 
 | Fresh positive answer | Accepted |
@@ -97,6 +92,12 @@ Validate that the answer is positive, `updatedAt` is nonzero, the age is within 
 | Timestamp exactly at the policy boundary | Covered by an explicit boundary test |
 
 
+
+## References
+
+- Chainlink — Data Feeds documentation: staleness, heartbeat, and `latestRoundData` guidance.
+- SWC-116 — Timestamp Dependence (block-based freshness reasoning).
+- [EVM Audit Lab — Lab 04](https://github.com/DefiAudit0x/evm-audit-lab)
 
 ## Disclosure note
 

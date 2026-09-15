@@ -57,13 +57,9 @@ If the owner is induced to call a malicious intermediary, the intermediary can i
 
 
 1. Deploy `VulnerableAccessControlVault` with funds.
-2. 
 2. Deploy an attacker-controlled intermediary contract.
-3. 
 3. Induce the owner to call the intermediary.
-4. 
 4. The intermediary calls `emergencyWithdraw`.
-5. 
 5. The vault sees the owner as `tx.origin` and transfers its balance.
 6. 
 
@@ -99,6 +95,12 @@ Replace `tx.origin` authorization with `msg.sender == owner`. Validate the recip
 | Transfer failure | Reverts and preserves state |
 
 
+
+## References
+
+- [Solidity security considerations — tx.origin](https://docs.soliditylang.org/en/latest/security-considerations.html#tx-origin)
+- SWC-115 — Authorization through `tx.origin`
+- [EVM Audit Lab — Lab 02](https://github.com/DefiAudit0x/evm-audit-lab)
 
 ## Disclosure note
 

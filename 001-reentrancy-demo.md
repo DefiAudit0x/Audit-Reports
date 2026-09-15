@@ -14,6 +14,17 @@ The vulnerable withdrawal flow sends Ether to the caller before reducing the cal
 
 This is a deliberately minimal educational example. It is not a report on a production protocol and must not be presented as a client finding.
 
+## Threat model
+
+- **Asset at risk:** the vault's entire balance — the reentrant path withdraws past the caller's real deposit.
+- **Privileged actor:** none — the flaw is the ordering of effects, not an authorization gap.
+- **Untrusted actor:** any depositor able to receive the payout in a contract with a malicious `receive`/fallback.
+- **Preconditions:** the attacker must hold a nonzero recorded balance and control the receiving contract.
+
+## Violated invariant
+
+> A successful withdrawal must reduce the user's claim before control is transferred to untrusted code.
+
 ## Finding: state update occurs after an external call
 
 The vulnerable function follows this order:

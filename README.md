@@ -5,9 +5,10 @@
 **Public smart-contract security research, educational case studies, and sanitized audit material.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-181717?style=flat-square)](LICENSE)
-[![Reports](https://img.shields.io/badge/Reports-12+-blue?style=flat-square)](#report-index)
+[![Reports](https://img.shields.io/badge/Reports-14+-blue?style=flat-square)](#report-index)
 [![Foundry](https://img.shields.io/badge/Tested%20with-Foundry-FF8C42?style=flat-square)](https://getfoundry.sh)
 [![Slither](https://img.shields.io/badge/Static%20Analysis-Slither-1F4E79?style=flat-square)](https://github.com/crytic/slither)
+[![Verify Reports](https://github.com/DefiAudit0x/Audit-Reports/actions/workflows/verify-reports.yml/badge.svg)](../../actions/workflows/verify-reports.yml)
 
 </div>
 
@@ -31,7 +32,30 @@
 | 010 | [Uninitialized UUPS Proxy Takeover](./010-unprotected-uups-initializer.md) | Independent research | Critical | ✅ Complete |
 | 011 | [Unbounded Loop Denial of Service](./011-unbounded-loop-dos.md) | Educational case study | Medium | ✅ Complete |
 | 012 | [Fee-on-Transfer Token Accounting Break](./012-fee-on-transfer-accounting.md) | Educational case study | Medium | ✅ Complete |
-| 013 | `_coming soon_` — Storage Layout Collisions in Upgrades | Educational case study | High | 📋 Planned |
+| 013 | [Storage Layout Collisions in Upgradeable Proxies](./013-storage-layout-collision-upgrades.md) | Educational case study | Critical | ✅ Complete |
+| 014 | [Sandwich MEV via Missing Slippage Protection](./014-sandwich-mev-missing-slippage.md) | Educational case study | Medium | ✅ Complete |
+| 015 | `_coming soon_` — Cross-Chain Message Replay | Independent research | High | 📋 Planned |
+
+## Lab cross-reference
+
+Most reports are backed by a runnable Foundry lab (vulnerable + remediated contracts, exploit and regression tests) in [evm-audit-lab](https://github.com/DefiAudit0x/evm-audit-lab):
+
+| Report | Lab | Runnable PoC |
+| --- | --- | --- |
+| 001 — Reentrancy Demo | [lab-01-reentrancy](https://github.com/DefiAudit0x/evm-audit-lab/tree/main/labs/lab-01-reentrancy) | `forge test --match-contract ReentrancyTest` |
+| 002 — tx.origin Authorization Bypass | [lab-02-tx-origin](https://github.com/DefiAudit0x/evm-audit-lab/tree/main/labs/lab-02-tx-origin) | `forge test --match-contract TxOriginTest` |
+| 003 — Stale Oracle Data | [lab-04-oracle-manipulation](https://github.com/DefiAudit0x/evm-audit-lab/tree/main/labs/lab-04-oracle-manipulation) | `forge test --match-contract StaleOracleTest` |
+| 004 — Flash Loan Price Manipulation | [lab-03-flash-loan](https://github.com/DefiAudit0x/evm-audit-lab/tree/main/labs/lab-03-flash-loan) | `forge test --match-contract FlashLoanTest` |
+| 005 — Privileged Mint via Access Control Flaw | [lab-09-privileged-mint](https://github.com/DefiAudit0x/evm-audit-lab/tree/main/labs/lab-09-privileged-mint) | `forge test --match-contract PrivilegedMintTest` |
+| 006 — ERC-4626 First-Depositor Inflation Attack | [lab-11-erc4626-inflation](https://github.com/DefiAudit0x/evm-audit-lab/tree/main/labs/lab-11-erc4626-inflation) | `forge test --match-contract InflationAttackTest` |
+| 007 — Rounding Direction Errors in Liquidity Math | [lab-05-integer-precision-loss](https://github.com/DefiAudit0x/evm-audit-lab/tree/main/labs/lab-05-integer-precision-loss) | `forge test --match-contract PrecisionTest` |
+| 008 — Unchecked Low-Level Call Return Value | [lab-10-unchecked-return-value](https://github.com/DefiAudit0x/evm-audit-lab/tree/main/labs/lab-10-unchecked-return-value) | `forge test --match-contract UncheckedReturnTest` |
+| 009 — EIP-712 Signature Replay | [lab-08-signature-replay](https://github.com/DefiAudit0x/evm-audit-lab/tree/main/labs/lab-08-signature-replay) | `forge test --match-contract SignatureReplayTest` |
+| 010 — Uninitialized UUPS Proxy Takeover | [lab-14-uups-initializer](https://github.com/DefiAudit0x/evm-audit-lab/tree/main/labs/lab-14-uups-initializer) | `forge test --match-contract UupsTakeoverTest` |
+| 011 — Unbounded Loop Denial of Service | [lab-12-loop-dos](https://github.com/DefiAudit0x/evm-audit-lab/tree/main/labs/lab-12-loop-dos) | `forge test --match-contract LoopDoSTest` |
+| 012 — Fee-on-Transfer Token Accounting Break | [lab-13-fee-on-transfer](https://github.com/DefiAudit0x/evm-audit-lab/tree/main/labs/lab-13-fee-on-transfer) | `forge test --match-contract FeeOnTransferTest` |
+| 013 — Storage Layout Collisions in Upgrades | [lab-07-proxy-storage-collision](https://github.com/DefiAudit0x/evm-audit-lab/tree/main/labs/lab-07-proxy-storage-collision) | `forge test --match-contract ProxyCollisionTest` |
+| 014 — Sandwich MEV via Missing Slippage Protection | [lab-06-sandwich-mev](https://github.com/DefiAudit0x/evm-audit-lab/tree/main/labs/lab-06-sandwich-mev) | `forge test --match-contract SandwichTest` |
 
 ## Audit methodology
 
