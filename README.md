@@ -5,7 +5,7 @@
 **Public smart-contract security research, educational case studies, and sanitized audit material.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-181717?style=flat-square)](LICENSE)
-[![Reports](https://img.shields.io/badge/Reports-3+-blue?style=flat-square)](#report-index)
+[![Reports](https://img.shields.io/badge/Reports-6+-blue?style=flat-square)](#report-index)
 [![Foundry](https://img.shields.io/badge/Tested%20with-Foundry-FF8C42?style=flat-square)](https://getfoundry.sh)
 [![Slither](https://img.shields.io/badge/Static%20Analysis-Slither-1F4E79?style=flat-square)](https://github.com/crytic/slither)
 
@@ -22,8 +22,10 @@
 | 001 | [Reentrancy Demo](./001-reentrancy-demo.md) | Educational case study | High | ✅ Complete |
 | 002 | [tx.origin Authorization Bypass](./002-tx-origin-access-control.md) | Educational case study | High | ✅ Complete |
 | 003 | [Stale Oracle Data](./003-stale-oracle.md) | Educational case study | Context-dependent | ✅ Complete |
-| 004 | `_coming soon_` — Flash Loan Price Manipulation | Independent research | High | 🚧 In progress |
-| 005 | `_coming soon_` — Privileged Mint via Access Control Flaw | Independent research | Critical | 📋 Planned |
+| 004 | [Flash Loan Price Manipulation](./004-flash-loan-price-manipulation.md) | Independent research | High | ✅ Complete |
+| 005 | [Privileged Mint via Access Control Flaw](./005-privileged-mint-access-control.md) | Independent research | Critical | ✅ Complete |
+| 006 | [ERC-4626 First-Depositor Inflation Attack](./006-erc4626-inflation-attack.md) | Educational case study | Medium | ✅ Complete |
+| 007 | `_coming soon_` — Rounding Direction Errors in Liquidity Math | Educational case study | Low | 📋 Planned |
 
 ## Audit methodology
 
