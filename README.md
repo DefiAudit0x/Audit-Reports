@@ -5,7 +5,7 @@
 **Public smart-contract security research, educational case studies, and sanitized audit material.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-181717?style=flat-square)](LICENSE)
-[![Reports](https://img.shields.io/badge/Reports-6+-blue?style=flat-square)](#report-index)
+[![Reports](https://img.shields.io/badge/Reports-12+-blue?style=flat-square)](#report-index)
 [![Foundry](https://img.shields.io/badge/Tested%20with-Foundry-FF8C42?style=flat-square)](https://getfoundry.sh)
 [![Slither](https://img.shields.io/badge/Static%20Analysis-Slither-1F4E79?style=flat-square)](https://github.com/crytic/slither)
 
@@ -25,7 +25,13 @@
 | 004 | [Flash Loan Price Manipulation](./004-flash-loan-price-manipulation.md) | Independent research | High | ✅ Complete |
 | 005 | [Privileged Mint via Access Control Flaw](./005-privileged-mint-access-control.md) | Independent research | Critical | ✅ Complete |
 | 006 | [ERC-4626 First-Depositor Inflation Attack](./006-erc4626-inflation-attack.md) | Educational case study | Medium | ✅ Complete |
-| 007 | `_coming soon_` — Rounding Direction Errors in Liquidity Math | Educational case study | Low | 📋 Planned |
+| 007 | [Rounding Direction Errors in Liquidity Math](./007-rounding-direction-liquidity-math.md) | Educational case study | Low | ✅ Complete |
+| 008 | [Unchecked Low-Level Call Return Value](./008-unchecked-call-return-value.md) | Educational case study | Medium | ✅ Complete |
+| 009 | [EIP-712 Signature Replay Across Chains and Nonces](./009-eip712-signature-replay.md) | Independent research | High | ✅ Complete |
+| 010 | [Uninitialized UUPS Proxy Takeover](./010-unprotected-uups-initializer.md) | Independent research | Critical | ✅ Complete |
+| 011 | [Unbounded Loop Denial of Service](./011-unbounded-loop-dos.md) | Educational case study | Medium | ✅ Complete |
+| 012 | [Fee-on-Transfer Token Accounting Break](./012-fee-on-transfer-accounting.md) | Educational case study | Medium | ✅ Complete |
+| 013 | `_coming soon_` — Storage Layout Collisions in Upgrades | Educational case study | High | 📋 Planned |
 
 ## Audit methodology
 
