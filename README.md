@@ -57,6 +57,14 @@ Most reports are backed by a runnable Foundry lab (vulnerable + remediated contr
 | 013 — Storage Layout Collisions in Upgrades | [lab-07-proxy-storage-collision](https://github.com/DefiAudit0x/evm-audit-lab/tree/main/labs/lab-07-proxy-storage-collision) | `forge test --match-contract ProxyCollisionTest` |
 | 014 — Sandwich MEV via Missing Slippage Protection | [lab-06-sandwich-mev](https://github.com/DefiAudit0x/evm-audit-lab/tree/main/labs/lab-06-sandwich-mev) | `forge test --match-contract SandwichTest` |
 
+## Technical articles
+
+The repository also includes longer-form technical writing derived from the research archive. These articles are written for readers who want the security concept and its practical implications explained without the full report structure.
+
+| Article | Topic | Related research |
+| --- | --- | --- |
+| [How Missing Slippage Protection Turns an AMM Swap into a Sandwich Target](./articles/how-missing-slippage-enables-sandwich-attacks.md) | AMM · MEV · slippage protection | [Report 014](./014-sandwich-mev-missing-slippage.md) · [Lab 06](https://github.com/DefiAudit0x/evm-audit-lab/tree/main/labs/lab-06-sandwich-mev) |
+
 ## Audit methodology
 
 The review process follows a structured pipeline:
