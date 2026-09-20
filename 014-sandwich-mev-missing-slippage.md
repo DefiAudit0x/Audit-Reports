@@ -28,7 +28,7 @@ function swap(uint256 amountIn, bool zeroForOne) external returns (uint256 out) 
 }
 ```
 
-The user's *intent* (a price they saw when signing) never reaches the contract, so the contract cannot defend it.
+The user's *execution constraint* never reaches the contract, so the contract cannot enforce it.
 
 ## 3. Threat model
 
@@ -39,9 +39,9 @@ The user's *intent* (a price they saw when signing) never reaches the contract, 
 
 ## 4. Violated invariant
 
-> A trader receives the price they expected when they signed.
+> A trader should not receive less than the minimum output they explicitly accepted for the transaction.
 
-With no `minAmountOut` and no `deadline`, the executed price is fully controlled by whoever orders the transactions around it.
+With no `minAmountOut`, the contract has no on-chain execution-price boundary to enforce. A `deadline` addresses a separate stale-order problem.
 
 ## 5. Impact
 
@@ -61,7 +61,7 @@ Argued in both directions: for tiny trades in deep pools the extracted slippage 
 
 ## 6. Technical details
 
-Why the sandwich is risk-free for the attacker: the front-run *moves the price in the direction the victim is already trading*, so the victim's own transaction executes the attacker's exit at the inflated price. The attacker's round trip pays the pool fee twice, which is why tiny victim trades are not worth attacking — the victim's extracted slippage must exceed two fees plus the bundle's priority cost.
+Why the sandwich can be profitable for the attacker: the front-run *moves the price in the direction the victim is already trading*, so the victim's own transaction executes the attacker's exit at the inflated price. The attacker's round trip pays the pool fee twice, which is why tiny victim trades are not worth attacking — the victim's extracted slippage must exceed two fees plus the bundle's priority cost.
 
 The missing-deadline half matters separately: a swap signed hours before inclusion remains executable against any future market state, so even a reasonable `minAmountOut` goes stale and turns into a free option for the counterparty (the classic "stale order" MEV).
 
