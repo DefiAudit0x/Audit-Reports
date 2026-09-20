@@ -33,13 +33,19 @@ So initially:
 
 Suppose a user wants to swap 10 A for B.
 
-Ignoring fees for simplicity, the expected amount of B is approximately:
+Ignoring fees for simplicity, the theoretical output is approximately:
 
 ```text
 100 - (10,000 / 110) ≈ 9.09 B
 ```
 
-The user therefore has a reasonable expectation that the swap will return roughly 9 B.
+In the test fixture, the corresponding fair execution is approximately:
+
+```text
+9.07 B
+```
+
+The distinction is simply that 9.09 B is the theoretical constant-product result under the simplified no-fee calculation, while 9.07 B is the measured fair execution in the fixture.
 
 But what happens if someone else gets their transaction in first?
 
