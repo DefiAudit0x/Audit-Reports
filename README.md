@@ -16,6 +16,10 @@
 
 > ⚠️ **Disclaimer:** Nothing in this repository should be interpreted as a guarantee that a protocol is secure. All reports are labeled by their source and scope.
 
+## How to read these reports
+
+Each report separates the **root cause**, **attack path**, **impact**, and **remediation**. The report type is part of the claim: educational examples are not presented as production findings, while independent and contest-based work identifies its provenance and scope.
+
 ## Report index
 
 | # | Report | Type | Severity | Status |
